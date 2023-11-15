@@ -14,7 +14,10 @@ public class ReadWorker implements Runnable{
             while (!server.isInputShutdown()) {
                 String message =in.readLine();
 
-                System.out.println(message);
+                if (message!= null) {
+                    System.out.println("Hello, " + message);
+                }
+
             }
         } catch (IOException e) {
             throw new RuntimeException();

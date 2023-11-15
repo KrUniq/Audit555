@@ -12,7 +12,7 @@ public class ChatClient {
         BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
         String nickName = reader.readLine();
         System.out.println("Ваш ник: "+nickName);
-        //out.write(nickName);
+        out.write(nickName);
         out.newLine();
         out.flush();
         ReadWorker readWorker=new ReadWorker(server,in);

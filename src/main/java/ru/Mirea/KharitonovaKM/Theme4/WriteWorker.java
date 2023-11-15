@@ -14,10 +14,14 @@ public class WriteWorker implements Runnable {
         try {
             Scanner input=new Scanner(System.in);
             while (!server.isOutputShutdown()) {
+
                 String outputMessage=input.nextLine();
-                out.write(outputMessage);
-                out.newLine();
-                out.flush();
+                if (!outputMessage.isEmpty()) {
+                    out.write(outputMessage);
+                    out.newLine();
+                    out.flush();
+                }
+
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
